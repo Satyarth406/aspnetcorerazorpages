@@ -33,8 +33,16 @@
 
                     <td>@restaurant.City</td>
                     <td>@restaurant.Country</td>
-                    <td>@restaurant.DineIn</td>
+                    <td>@if (restaurant.DineIn)
+                        {
+                        <span>Yes</span>
+                        }
+                        else
+                        {
+                            <span>No</span>
 
+                        }</td>
+                   
                     <td><a asp-page="edit" asp-route-id="@restaurant.Id" class="btn btn-primary">Edit</a></td>
                     <form method="post">
                         <td><button asp-route-id="@restaurant.Id" type="submit"  asp-page-handler="delete" class="btn btn-danger">Delete</button></td>
