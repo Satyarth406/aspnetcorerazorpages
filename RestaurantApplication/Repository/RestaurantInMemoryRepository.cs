@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantApplication.Repository
 {
-    public class RestaurantRepository : IRestaurantRepository
+    public class RestaurantInMemoryRepository : IRestaurantRepository
     {
         //In-Memory list of data
         public List<Restaurant> RestaurantList = new List<Restaurant>()
