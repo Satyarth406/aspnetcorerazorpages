@@ -25,7 +25,10 @@ namespace RestaurantApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IRestaurantRepository, RestaurantInMemoryRepository>();
-            services.AddRazorPages();
+            services.AddRazorPages().AddRazorPagesOptions(setup =>
+            {
+                setup.Conventions.AddPageRoute("/restaurants/allrestaurants", "");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
